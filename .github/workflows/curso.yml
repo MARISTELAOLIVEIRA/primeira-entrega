@@ -1,0 +1,42 @@
+# ==========================================================
+#  Curso "Minha primeira entrega": o robô que confere cada passo
+# ==========================================================
+#  Toda a lógica está em .github/scripts/curso.sh
+#  Os textos de cada passo estão em .github/passos/
+name: Curso
+
+on:
+  push:                     # a cada commit na main (README editado, index.html criado...)
+    branches: [main]
+  workflow_run:             # quando o GitHub Pages termina de publicar o site
+    workflows: ["pages-build-deployment"]
+    types: [completed]
+  page_build:               # (forma antiga de avisar que o Pages publicou)
+  issue_comment:            # quando o aluno comenta na issue (ex.: "conferir")
+    types: [created]
+  workflow_dispatch:        # botão "Run workflow" na aba Actions, para rodar à mão
+
+permissions:
+  contents: read            # ler os arquivos do repositório
+  issues: write             # criar a issue, comentar e trocar etiquetas
+  pages: read               # saber se o site já foi publicado
+
+# um de cada vez, para dois eventos seguidos não responderem em dobro
+concurrency:
+  group: curso
+  cancel-in-progress: false
+
+jobs:
+  conferir:
+    # não roda no repositório-modelo, só nas cópias dos alunos
+    if: ${{ !github.event.repository.is_template }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Conferir o passo atual
+        run: bash .github/scripts/curso.sh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EVENTO: ${{ github.event_name }}
