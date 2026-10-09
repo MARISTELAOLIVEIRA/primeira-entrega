@@ -134,6 +134,7 @@ $(renderizar "$(arquivo_do_passo $((PASSO + 1)))")"
 $(renderizar "$PASSOS/5-fim.md")"
       gh issue edit "$ISSUE" --repo "$REPO" --remove-label "passo-$PASSO" --add-label concluido >/dev/null
       gh issue close "$ISSUE" --repo "$REPO" --reason completed >/dev/null
+      gh api -X POST "repos/${REPO}/issues/${ISSUE}/reactions" -f content=hooray >/dev/null || true   # 🎉 na issue
     fi
     PASSO=$((PASSO + 1))
     AVANCOU=1
