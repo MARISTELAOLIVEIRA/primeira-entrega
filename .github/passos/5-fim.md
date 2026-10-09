@@ -26,6 +26,6 @@ Quer ir além? Veja os módulos de **Git + VS Code** e **README caprichado** no 
 
 Lá você **baixa a imagem** do certificado e vê quantos cursos da trilha já concluiu. (Se ele ainda não aparecer, espere uns minutinhos: o GitHub leva um tempo para registrar a conclusão.)
 
-💼 Concluindo os **três** cursos práticos, você ganha o [certificado da trilha completa](https://maristelaoliveira.github.io/curso-github/certificado.html?aluno={{usuario}}&curso=trilha) , que vai para o seu **LinkedIn**. Todos os seus estão em [Meus certificados](https://maristelaoliveira.github.io/curso-github/certificado.html).
+💼 Concluindo os **três** cursos práticos, você ganha o [certificado da trilha completa](https://maristelaoliveira.github.io/curso-github/certificado.html?aluno={{usuario}}&curso=trilha), que vai para o seu **LinkedIn**. Todos os seus estão em [Meus certificados](https://maristelaoliveira.github.io/curso-github/certificado.html).
 
 Vou fechar esta issue como concluída. Até a próxima! ⭐
