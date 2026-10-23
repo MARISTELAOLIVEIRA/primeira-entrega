@@ -1,4 +1,4 @@
-# ⭐ Minha primeira entrega no GitHub
+# <img src="https://maristelaoliveira.github.io/assets/img/octocat-stela.webp" width="40" height="40" alt="Octocat da Stela" align="absmiddle"> ⭐ Minha primeira entrega no GitHub
 
 <img src="https://maristelaoliveira.github.io/curso-github/assets/memoji.png" width="90" align="right" alt="Memoji da Profª Stela">
 
