@@ -5,7 +5,7 @@
 Curso prático da **Profª Maristela Oliveira** (pode chamar de Stela 😉) · Faculdade de Tecnologia e Inovação Senac DF
 
 Neste curso você faz, de verdade, o caminho de toda entrega das disciplinas: um repositório com README, um site e o link publicado.
-**A cada tarefa que você fizer, eu confiro automaticamente e respondo com o próximo passo.** Tudo pelo navegador, sem instalar nada. ⏱️ uns 15 minutos.
+**A cada tarefa que você fizer, eu confiro e respondo com o próximo passo.** Tudo pelo navegador, sem instalar nada. ⏱️ uns 15 minutos.
 
 ## 🚀 Como começar
 

@@ -138,7 +138,7 @@ echo "Issue #$ISSUE · passo atual: $PASSO · evento: ${EVENTO:-?}"
 
 # no fim do curso, o certificado entra no topo do README do aluno: a issue fecha e some da vista, o README fica
 readme_final() {
-  git config user.name "Robô do curso"
+  git config user.name "Stela (curso)"
   git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
   git fetch -q origin main
   git checkout -q -B main origin/main
