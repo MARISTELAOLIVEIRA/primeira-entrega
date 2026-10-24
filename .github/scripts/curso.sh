@@ -114,6 +114,18 @@ PASSO="$(echo "$ETIQUETAS" | grep -o 'passo-[0-9]*' | head -1 | cut -d- -f2)"
 PASSO="${PASSO:-1}"
 echo "Issue #$ISSUE · passo atual: $PASSO · evento: ${EVENTO:-?}"
 
+# no fim do curso, o certificado entra no topo do README do aluno: a issue fecha e some da vista, o README fica
+readme_final() {
+  git config user.name "Robô do curso"
+  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+  git fetch -q origin main
+  git checkout -q -B main origin/main
+  bash .github/scripts/readme-final.sh "$USUARIO" entrega "Minha primeira entrega"
+  git add README.md
+  git commit -q -m "Põe o certificado do curso no README" || return 0
+  git push -q origin main
+}
+
 # ---------- 3. confere e avança enquanto as tarefas estiverem cumpridas ----------
 AVANCOU=0
 while [ "$PASSO" -le "$ULTIMO_PASSO" ]; do
@@ -134,6 +146,7 @@ $(renderizar "$(arquivo_do_passo $((PASSO + 1)))")"
 $(renderizar "$PASSOS/5-fim.md")"
       gh issue edit "$ISSUE" --repo "$REPO" --remove-label "passo-$PASSO" --add-label concluido >/dev/null
       gh issue close "$ISSUE" --repo "$REPO" --reason completed >/dev/null
+      readme_final || echo "Não consegui atualizar o README (o curso já está concluído)."
       gh api -X POST "repos/${REPO}/issues/${ISSUE}/reactions" -f content=hooray >/dev/null || true   # 🎉 na issue
     fi
     PASSO=$((PASSO + 1))

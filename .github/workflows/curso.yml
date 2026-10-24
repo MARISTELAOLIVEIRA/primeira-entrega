@@ -17,7 +17,7 @@ on:
   workflow_dispatch:        # botão "Run workflow" na aba Actions, para rodar à mão
 
 permissions:
-  contents: read            # ler os arquivos do repositório
+  contents: write            # o robô põe o certificado no README no fim do curso
   issues: write             # criar a issue, comentar e trocar etiquetas
   pages: read               # saber se o site já foi publicado
 
