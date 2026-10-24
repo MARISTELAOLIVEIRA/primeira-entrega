@@ -6,3 +6,5 @@
 4. Em **Branch**, escolha **main**, deixe a pasta **/ (root)** e clique em **Save**
 
 O GitHub leva 1 ou 2 minutos para publicar. ⏳ Quando o site ficar pronto, eu aviso aqui!
+
+> 💡 **Por que demora?** O GitHub copia o seu site para os servidores dele e o endereço precisa se espalhar pela internet. A isso se chama **propagação**. Se o link ainda não abrir, espere um pouco e atualize a página.
